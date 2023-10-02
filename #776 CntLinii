@@ -1,0 +1,36 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int x[1001][1001],m,n,i,y,j,ok=0,p=0;
+    cin>>n>>m;
+    for(i=1;i<=n;i++)
+    {
+        for(j=1;j<=m;j++)
+        {
+            cin>>x[i][j];
+        }
+    }
+    for(i=1;i<=n;i++)
+    { 
+        ok=0;
+        y=x[i][1];
+       for(j=1;j<=m;j++)
+        {
+            
+            if(y!=x[i][j])
+            {
+                ok=1;
+                j=m;
+            }
+        }
+        if(ok==0)
+        {
+            p++;
+        }
+    }
+    cout<<p;
+    return 0;
+}
